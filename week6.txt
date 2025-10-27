@@ -1,0 +1,62 @@
+class ComputerNode:
+    def __init__(self, name):
+        self.name = name
+        self.next = None
+
+class ComputerList:
+    def __init__(self):
+        self.head = None
+
+    def add_computer(self, name):
+        new_computer = ComputerNode(name)
+        if self.head is None:
+            self.head = new_computer
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = new_computer
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.name)
+            current = current.next
+
+
+lst1 = ComputerList()
+lst1.add_computer("computer1")
+lst1.add_computer("computer2")
+lst1.add_computer("computer3")
+lst1.display()
+
+class TableNode:
+    def __init__(self, name):
+        self.name = name
+        self.next = None
+
+class TableList:
+    def __init__(self):
+        self.head = None
+
+    def add_table(self, name):
+        new_table = TableNode(name)
+        if self.head is None:
+            self.head = new_table
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = new_table
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.name)
+            current = current.next
+
+lst2 = TableList()
+lst2.add_table("Table1")
+lst2.add_table("Table2")
+lst2.add_table("Table3")
+lst2.display()
